@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+    <title>{% block title %} {{ block.super }} Talentlab {% endblock %}</title>
+</head>
+<body>
+        {% block content %}
+       <!-- Titolo primario -->
+      <div class="">
+        <h1>Service talent</h1>
+        <h4>Servizio di assistenza Talent-Lab</h4>
+      </div>
+        <!-- e-mail form-->
+        <div class="div1 col-6 space">
+        <form method="POST" action="{% url 'homepage' %}">
+            {% csrf_token %}
+            <div class="">
+              <h5>Join today!</h5>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1"><strong>Email address:</strong></label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"><strong>Name:</strong></label>
+            <input type="text" class="form-control" id="first_name" placeholder="first name" required>
+          </div>
+          <div class="form-group space">
+            <label for="exampleFormControlTextarea1"><strong>Textarea:</strong></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"required placeholder="Type the issue..."></textarea>
+          </div>
+        </form>
+        </div>
+       <!-- Titolo secondario -->
+       
+          <h2>Indica il tipo di assistenza</h2>
+        
+      </div>
+       <!-- Software part-->
+       <div class="container tab">
+        <div class="div2 space">
+           <div class="move"><i class="fas fa-desktop font-awesome space"></i></div>
+            <div class="container font">
+                <h3>Software</h3>
+                </div>
+         <form class="form-group">
+            <label class="container">Installazione software lic
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Formatt. sistema operativo
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Backup dati
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Software custom
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+           </form>
+        </div><!-- Hardware part--><div class="div2 space">
+            <div class="move"><i class="fas fa-microchip font-awesome space"></i></div>
+        <div class="container font">
+            <h3>Hardware</h3>
+            </div>
+            <form class="form-group" id="position">
+            <label class="container">Pulizia computer
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Pulizia portatile
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Aassemblaggio computer
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Riparazione computer
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Sostituzione HDD/SDD
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+            </form>
+         </div>
+         <div class="vpspace">
+            <button type="button" class="btn btn-secondary">Verifica il prezzo</button>
+            </div>
+         <form>
+            <div class="form-row align-items-center container">
+              <div class="col-auto my-1">
+                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Consegna entro...</option>
+                  <option value="1">Al più presto</option>
+                  <option value="2">Tra una settimana</option>
+                  <option value="3">Tra due settimane</option>
+                </select>
+              </div>
+              <div class="col-auto my-1">
+                <div class="custom-control custom-checkbox mr-sm-2">
+                  <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                  <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+                </div>
+              </div>
+              <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>  
+       </div>
+        {% endblock%}
+</body>
+</html>
+
+
+
+<!-- <div class="div2">
+          <div> <img src="{% static 'icons8-bios-100.png' %}" alt=""></div>-->
